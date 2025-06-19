@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 19.2,
+      "left": -62.36,
+      "rotate": 270,
+      "attrs": {}
+    },
+    { "type": "wokwi-microphone", "id": "mic1", "top": -7.38, "left": 119.79, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo1", "top": 151.6, "left": 144, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 80.75,
+      "left": 163.2,
+      "attrs": { "value": "220000" }
+    },
+    { "type": "wokwi-led", "id": "led1", "top": -3.6, "left": 205.4, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -55.2,
+      "left": -94.2,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "mic1:1", "esp:15", "green", [ "v9.6", "h-76.8" ] ],
+    [ "mic1:2", "esp:GND.2", "black", [ "v19.2", "h-230.41" ] ],
+    [ "esp:GND.2", "servo1:GND", "black", [ "v0" ] ],
+    [ "esp:18", "servo1:PWM", "green", [ "v0" ] ],
+    [ "esp:5V", "servo1:V+", "red", [ "v0" ] ],
+    [ "esp:2", "r1:1", "green", [ "v0" ] ],
+    [ "led1:A", "r1:2", "green", [ "v0" ] ],
+    [ "led1:C", "esp:GND.2", "green", [ "v0" ] ],
+    [ "bz1:1", "esp:4", "green", [ "v0" ] ],
+    [ "bz1:2", "esp:GND.1", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
