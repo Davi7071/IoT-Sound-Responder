@@ -52,37 +52,6 @@ Com base no arquivo `diagram.json`, o circuito está montado da seguinte forma:
 | Buzzer +        | GPIO 4         | Sinal digital   |
 | Buzzer –        | GND            | Terra           |
 
-> Consulte `diagram.json` para detalhes de posicionamento e roteamento.
-
----
-
-## 🚀 Como Rodar
-
-### 1. Firmware (ESP32)
-
-1. Abra o Arduino IDE (ou PlatformIO).  
-2. Instale a placa **ESP32 Dev Module** (pelo “Boards Manager”).  
-3. Instale a biblioteca **ESP32Servo** via Library Manager.  
-4. Carregue este repositório e abra `sketch.ino`.  
-5. Selecione a porta e o modelo “ESP32 Dev Module” em **Tools** → **Board**.  
-6. Clique em **Upload**.
-
-### 2. App Mobile (Expo)
-
-1. Instale o Expo CLI (se ainda não tiver):
-   ```bash
-   npm install -g expo-cli
-   ```
-2. No diretório `app/`, instale dependências:
-   ```bash
-   npm install
-   ```
-3. Execute o app em desenvolvimento:
-   ```bash
-   expo start
-   ```
-4. No app, conecte‑se via Bluetooth ao seu ESP32 e selecione ou grave o som de ativação.
-
 ---
 
 ## 📱 Simulação Online
@@ -98,7 +67,7 @@ Você pode testar uma versão virtual no Wokwi:
 ├── diagram.json          ← Esquema de ligações Wokwi
 ├── libraries.txt         ← Lista de bibliotecas usadas
 ├── sketch.ino            ← Código Arduino para ESP32
-└── app/                  ← Código Expo/React Native (mobile)
+└── app/                  ← Código 
 ```
 
 ---
@@ -107,14 +76,3 @@ Você pode testar uma versão virtual no Wokwi:
 
 - **Sensibilidade do microfone** e **padrão de som** podem ser ajustados diretamente no código ou via comandos BLE enviados pelo app.  
 - **Ângulo do servo**, **duração do LED** e **frequência do buzzer** também estão parametrizados no firmware.
-
----
-
-## 📄 Licença
-
-Este projeto está licenciado sob a **MIT License** — veja o arquivo [`LICENSE`](./LICENSE) para mais detalhes.
-
----
-
-> Desenvolvido por você, entusiasta de IoT e prototipagem rápida!  
-> Feedbacks e contribuições são bem‑vindos. 😊
